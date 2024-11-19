@@ -78,17 +78,17 @@ endmodule```
 
 4:1 MUX Data Flow Implementation
 
-'''module muld(a,b,c,d,s,y);
+module muld(a,b,c,d,s,y);
 input a,b,c,d;
 input[1:0]s;
 output y;
 assign y=(~s[1]&~s[0]&a)|(~s[1]&s[0]&b)|(s[1]&~s[0]&c)|(s[1]&s[0]&d);
-endmodule'''
+endmodule
 ![Screenshot 2024-11-19 073820](https://github.com/user-attachments/assets/eb9bf154-bd9d-431b-b0e6-c6b7b18cacc8)
 
 4:1 MUX Behavioral Implementation
 
-'''module muxbe(s,i,y);
+module muxbe(s,i,y);
 input [1:0]s;
 input [3:0]i;
 output reg y;
@@ -101,12 +101,12 @@ case(s)
 2'b11 :y=i[3];
 endcase
 end
-endmodule'''
+endmodule
 ![Screenshot 2024-11-19 072445](https://github.com/user-attachments/assets/4a2b0bc9-0dfc-4dda-996e-7079b061073a)
 
 4:1 MUX Structural Implementation
 
-'''module and_gate(output a, input b, c, d);
+module and_gate(output a, input b, c, d);
 assign a = b & c & d;
 endmodule
 
@@ -129,12 +129,12 @@ and_gate u4(T2, b, s0, s1bar);
 and_gate u5(T3, c, s0bar, s1);
 and_gate u6(T4, d, s0, s1);
 or_gate u7(out, T1, T2, T3, T4);
-endmodule'''
+endmodule
 ![Screenshot 2024-11-19 072517](https://github.com/user-attachments/assets/4936fe2b-45a7-45b4-9117-ce15eb3ffa67)
 
 Testbench Implementation
 
-'''module multiplexer_tb;
+module multiplexer_tb;
  // Declare inputs as reg and outputs as wire
  reg s1, s0, a, b, c, d;
  wire y;
@@ -164,7 +164,7 @@ Testbench Implementation
    // Finish simulation
    $finish;
  end
-endmodule'''
+endmodule
  ![Screenshot 2024-11-19 072543](https://github.com/user-attachments/assets/578de659-c1c8-44d4-936b-1d51300a15b6)
        
       
