@@ -62,7 +62,7 @@ Truth Table
 Verilog Code
 
 4:1 MUX Gate-Level Implementation
-'''
+```
 module multiplexer(s1,s0,a,b,c,d,y);
 input s1,s0,a,b,c,d;
 output y;
@@ -73,7 +73,7 @@ and g3(w[2],s1,~s0,c);
 and g4(w[3],s1,s0,d);
 or g5(y,w[0],w[1],w[2],w[3]);
 endmodule
-'''
+```
 ![Screenshot 2024-11-19 072331](https://github.com/user-attachments/assets/9bdf28e2-ce11-4c21-ba18-ce22f7dd11ff)
 
 4:1 MUX Data Flow Implementation
@@ -88,7 +88,7 @@ endmodule
 ![Screenshot 2024-11-19 073820](https://github.com/user-attachments/assets/eb9bf154-bd9d-431b-b0e6-c6b7b18cacc8)
 
 4:1 MUX Behavioral Implementation
-'''
+```
 module muxbe(s,i,y);
 input [1:0]s;
 input [3:0]i;
@@ -103,11 +103,11 @@ case(s)
 endcase
 end
 endmodule
-'''
+```
 ![Screenshot 2024-11-19 072445](https://github.com/user-attachments/assets/4a2b0bc9-0dfc-4dda-996e-7079b061073a)
 
 4:1 MUX Structural Implementation
-'''
+```
 module and_gate(output a, input b, c, d);
 assign a = b & c & d;
 endmodule
@@ -132,11 +132,11 @@ and_gate u5(T3, c, s0bar, s1);
 and_gate u6(T4, d, s0, s1);
 or_gate u7(out, T1, T2, T3, T4);
 endmodule
-'''
+```
 ![Screenshot 2024-11-19 072517](https://github.com/user-attachments/assets/4936fe2b-45a7-45b4-9117-ce15eb3ffa67)
 
 Testbench Implementation
-'''
+```
 module multiplexer_tb;
  // Declare inputs as reg and outputs as wire
  reg s1, s0, a, b, c, d;
@@ -168,7 +168,7 @@ module multiplexer_tb;
    $finish;
  end
 endmodule
-'''
+```
  ![Screenshot 2024-11-19 072543](https://github.com/user-attachments/assets/578de659-c1c8-44d4-936b-1d51300a15b6)
        
       
