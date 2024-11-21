@@ -77,14 +77,14 @@ endmodule
 ![Screenshot 2024-11-19 072331](https://github.com/user-attachments/assets/9bdf28e2-ce11-4c21-ba18-ce22f7dd11ff)
 
 4:1 MUX Data Flow Implementation
-'''
+```
 module muld(a,b,c,d,s,y);
 input a,b,c,d;
 input[1:0]s;
 output y;
 assign y=(~s[1]&~s[0]&a)|(~s[1]&s[0]&b)|(s[1]&~s[0]&c)|(s[1]&s[0]&d);
 endmodule
-'''
+```
 ![Screenshot 2024-11-19 073820](https://github.com/user-attachments/assets/eb9bf154-bd9d-431b-b0e6-c6b7b18cacc8)
 
 4:1 MUX Behavioral Implementation
